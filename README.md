@@ -1,12 +1,12 @@
 # &#60;dsc-polymer-form-login&#62;
 
-![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-form-contact.svg?branch=master)
-![Bower version](https://img.shields.io/bower/v/dsc-polymer-form-contact.svg)
-![](https://img.shields.io/pypi/l/Django.svg)
+![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-form-login.svg?branch=master)
+![Bower version](https://img.shields.io/bower/v/dsc-polymer-form-login.svg)
+[![npm](https://img.shields.io/npm/l/express.svg)]()
 
 Basic and standard form component with Polymer. This project use Google Material Design.
 
-![demo](https://raw.githubusercontent.com/discovery-tecnologia/dsc-polymer-form-contact/master/docs/img/form.png)
+![demo](https://raw.githubusercontent.com/discovery-tecnologia/dsc-polymer-form-login/master/docs/img/form.png)
 
 ## Demo
 
