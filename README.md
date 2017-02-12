@@ -1,4 +1,4 @@
-# &#60;dsc-polymer-form-contact&#62;
+# &#60;dsc-polymer-form-login&#62;
 
 ![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-form-contact.svg?branch=master)
 ![Bower version](https://img.shields.io/bower/v/dsc-polymer-form-contact.svg)
@@ -11,26 +11,26 @@ Basic and standard form component with Polymer. This project use Google Material
 ## Demo
 
 ```
-$ git clone https://github.com/discovery-tecnologia/dsc-polymer-form-contact.git
-$ cd dsc-polymer-form-contact
+$ git clone https://github.com/discovery-tecnologia/dsc-polymer-form-login.git
+$ cd dsc-polymer-form-login
 $ npm install
 $ npm install -g polymer-cli
 $ polymer serve
 ```
-Open browser: http://localhost:8080/components/dsc-polymer-form-contact/demo/index.html
+Open browser: http://localhost:8080/components/dsc-polymer-form-login/demo/index.html
 
 ## Usage
 
 Install with:
 
 ```
-$ bower i dsc-polymer-form-contact --save
+$ bower i dsc-polymer-form-login --save
 ```
 
 Example usage:
 
 ```html
-<dsc-polymer-form-contact language="br" endpoint="http://my-site/my-api"></dsc-polymer-form-contact>
+<dsc-polymer-form-login language="br" endpoint="http://my-site/my-api"></dsc-polymer-form-login>
 ```
 
 ## API
@@ -40,7 +40,7 @@ Example usage:
 | language       | Translate the form messages and labels | en                                |
 | endpoint       | Endpoint API                           | http://localhost:3000/api/contact |
 
-The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-contact/blob/master/locales.json) contains the map of languages translated (EN,BR,ES).
+The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-login/blob/master/locales.json) contains the map of languages translated (EN,BR,ES).
 
 ## Test
 
