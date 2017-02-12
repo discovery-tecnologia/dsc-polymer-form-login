@@ -1,0 +1,26 @@
+{
+  "en": {
+    "label_mail": "Mail",
+    "label_password": "Password",
+    "required_field": "Field required!",
+    "invalid_mail": "Invalid mail!",
+    "btn_text": "Send",
+    "success_message": "Sent with successs!"
+  },
+  "br": {
+      "label_mail": "E-mail",
+      "label_password": "Senha",
+      "required_field": "Campo obrigatório!",
+      "invalid_mail": "E-mail inválido!",
+      "btn_text": "Enviar",
+      "success_message": "Enviado com sucesso!"
+  },
+  "es": {
+      "label_mail": "Correo electrónico",
+      "label_password": "Senha",
+      "required_field": "Campo obligatorio!",
+      "invalid_mail": "Correo electrónico no válido!",
+      "btn_text": "Enviar",
+      "success_message": "Enviado correctamente!"
+  }
+}

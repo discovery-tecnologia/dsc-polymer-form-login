@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>dsc-polymer-form-login tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <script src="../../iron-test-helpers/mock-interactions.js"></script>
+
+  <link rel="import" href="../dsc-polymer-form-login.html">
+
+</head>
+<body>
+
+  <test-fixture id="basic">
+    <template>
+      <dsc-polymer-form-login 
+        language="es" 
+        endpoint="http://my-web-site/my-api">
+      </dsc-polymer-form-login>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('<dsc-polymer-form-login>', function() {
+      var container;
+
+      setup(function() {
+        container = fixture('basic');
+      });
+
+      test('Check default language attribute', function() {
+        var language = container.getAttribute('language');
+        expect(language).to.be.equal('es');
+      });
+
+      test('Check default endpoint attribute', function() {
+        var endpoint = container.getAttribute('endpoint');
+        expect(endpoint).to.be.equal('http://my-web-site/my-api');
+      });
+    });
+  </script>
+</body>
+</html>

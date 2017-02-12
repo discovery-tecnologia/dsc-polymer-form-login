@@ -1,0 +1,17 @@
+{
+  "name": "dsc-polymer-form-login",
+  "description": "Default form for login pages. Includes validation, internationalization, and API endpoint configuration.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "latest",
+    "eslint": "^3.12.0",
+    "eslint-config-google": "^0.7.1",
+    "eslint-plugin-html": "^1.7.0"
+  },
+  "scripts": {
+    "install": "node node_modules/bower/bin/bower install",
+    "lint": "eslint . --ext js,html --ignore-path .gitignore",
+    "test": "npm run lint && polymer test"
+  }
+}

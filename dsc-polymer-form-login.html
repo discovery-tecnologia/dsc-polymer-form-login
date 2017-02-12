@@ -1,0 +1,190 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../app-localize-behavior/app-localize-behavior.html">
+<link rel="import" href="../iron-validatable-behavior/iron-validatable-behavior.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-input/paper-textarea.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-icons/notification-icons.html">
+<link rel="import" href="../paper-toast/paper-toast.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-form/iron-form.html">
+
+<dom-module id="dsc-polymer-form-login">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+      }
+
+      #dsc-container-form-login form paper-input iron-icon {
+          color: #666666;
+          margin: 0 5px 5px 0; 
+      }
+
+      .suffix-info {
+          color: #999999; 
+      }
+
+      .dsc-button-submit {
+          margin-top: 15px;
+      }
+
+    </style>
+
+    <div id="dsc-container-form-login">
+      <form is="iron-form">
+        <paper-input name="mail" value="{{login.mail}}" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
+          <iron-icon icon="mail" prefix></iron-icon>
+          <div class="suffix-info" suffix>@email.com</div>
+        </paper-input>
+        <paper-input name="password" type="password" value="{{login.password}}" label$="[[localize('label_password')]]" required auto-validate error-message="[[localize('required_field')]]">
+          <iron-icon icon="perm-identity" prefix></iron-icon>
+        </paper-input>
+        <paper-button id="button" class="dsc-button-submit" raised on-tap="handleSubmit">[[localize('btn_text')]]</paper-button>
+
+        <paper-toast id="toast" class="dsc-toast"></paper-toast>
+
+      </form>
+
+      <iron-ajax id="ajax" 
+                 url="{{endpoint}}" 
+                 content-type="application/json"
+                 handle-as="json"
+                 method="POST" 
+                 on-error="_handleError"
+                 on-request="_handleRequestSent"
+                 on-response="_handleResponseReceived"></iron-ajax>
+
+    </div>
+  </template>
+  <script>
+
+    Polymer({
+      is: 'dsc-polymer-form-login',
+
+      behaviors: [
+        Polymer.AppLocalizeBehavior,
+        Polymer.IronValidatableBehavior,
+      ],
+
+      properties: {
+
+        login: {
+            type: Object,
+            value: {
+              'mail': null,
+              'password': null,
+            },
+            notify: true,
+        },
+
+        /**
+         * Define language tranlated
+         * Actual options (en,br,es)
+         * @type String
+         */
+        language: {
+          value: 'en',
+          type: String,
+        },
+
+        /**
+         * Define endpoint API
+         * @type String
+         */
+        endpoint: {
+          type: String,
+          value: 'http://localhost:3000/api/login',
+        },
+
+      },
+
+      /**
+       * On click or tap indicators.
+       *
+       * @param {object} event Event object.
+       *
+       * @return {undefined}
+       */
+      handleSubmit: function(event) {
+        var form = Polymer.dom(event).localTarget.parentElement;
+        if (form.validate()) {
+          var request = this.$.ajax;
+          request.body = JSON.stringify(form.serialize());
+          request.generateRequest();
+        }
+      },
+
+      /**
+       * Handler error requests
+       *
+       * @param {object} event Event object.
+       *
+       * @return {undefined}
+       */
+      _handleError: function(event) {
+          this.$.button.disabled = false;
+          var req = event.detail.request;
+          var statusCode = req.status;
+          var message = 'HTTP status: ' + statusCode + ' - ' + req.statusText;
+          this._showToast(message, 'red');
+      },
+
+      /**
+       * Handler requests sent
+       *
+       * @param {object} request Request object.
+       *
+       * @return {undefined}
+       */
+      _handleRequestSent: function(request) {
+          this.$.button.disabled = true;
+      },
+
+      /**
+       * Handler responses received
+       *
+       * @param {object} response Response object.
+       *
+       * @return {undefined}
+       */
+      _handleResponseReceived: function(response) {
+          this.$.button.disabled = false;
+          this._showToast();
+      },
+
+      /**
+       * Show message for user
+       *
+       * @param {String} message message text.
+       * @param {String} color string override background color toast.
+       *
+       * @return {undefined}
+       */
+      _showToast: function(message, color) {
+          var toast = this.$.toast;
+          if(message == null) {
+             message = this.localize('success_message');
+          }
+          toast.text = message;
+
+          this.customStyle['--paper-toast-background-color'] = color == null
+          ? 'green' :
+             color;
+
+          Polymer.updateStyles();
+          toast.show();
+      },
+
+      attached: function() {
+        this.loadResources(this.resolveUrl('locales.json'));
+      },
+
+    });
+  </script>
+
+</dom-module>
