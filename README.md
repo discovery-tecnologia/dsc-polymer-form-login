@@ -4,7 +4,7 @@
 ![Bower version](https://img.shields.io/bower/v/dsc-polymer-form-login.svg)
 [![npm](https://img.shields.io/npm/l/express.svg)]()
 
-Basic and standard form component with Polymer. This project use Google Material Design.
+Basic and standard form login component with Polymer. This project use Google Material Design.
 
 ![demo](https://raw.githubusercontent.com/discovery-tecnologia/dsc-polymer-form-login/master/docs/img/form.png)
 
