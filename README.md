@@ -30,7 +30,7 @@ $ bower i dsc-polymer-form-login --save
 Example usage:
 
 ```html
-<dsc-polymer-form-login language="br" endpoint="http://my-site/my-api"></dsc-polymer-form-login>
+<dsc-polymer-form-login language="br" endpoint="http://my-site/my-api" on-response-success="myHandlerFunction"></dsc-polymer-form-login>
 ```
 
 ## API
