@@ -148,7 +148,7 @@
         var form = Polymer.dom(event).localTarget.parentElement;
         if (form.validate()) {
           var request = this.$.ajax;
-          request.body = JSON.stringify(form.serialize());
+          request.body = form.serialize();
           request.generateRequest();
         }
       },
