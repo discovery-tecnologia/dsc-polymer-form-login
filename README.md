@@ -42,6 +42,7 @@ Example usage:
 |:---------|---------|---------------------------------------|-----------------------------------|
 | language | String  |Translate the form messages and labels | en                                |
 | endpoint | String  |Endpoint API                           | http://localhost:3000/api/login   |
+| headers  | Object  |Headers options for requisition        | null                              |
 
 ### Events
 | Name             | Description                                                                      |
