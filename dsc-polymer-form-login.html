@@ -70,6 +70,7 @@
 
       <iron-ajax id="ajax" 
                  url="{{endpoint}}" 
+                 headers="{{headers}}"
                  content-type="application/json"
                  handle-as="json"
                  method="POST" 
@@ -117,6 +118,14 @@
         endpoint: {
           type: String,
           value: 'http://localhost:3000/api/login',
+        },
+
+        /**
+         * Define default headers API
+         * @type Object
+         */
+        headers: {
+          type: Object,
         },
 
       },

@@ -4,7 +4,7 @@
 <dom-module id="dsc-polymer-form-login-basic">
   <template>
 
-    <dsc-polymer-form-login on-response-success="handlerResponse"></dsc-polymer-form-login>
+    <dsc-polymer-form-login headers="{{header}}" on-response-success="_handlerResponse"></dsc-polymer-form-login>
     <h3>{{ret}}</h3>
 
   </template>
@@ -17,6 +17,13 @@
         ret: {
           type: Object,
         },
+
+        header: {
+          type: Object,
+          value: {
+            'X-foo': 'X-bar',
+          },
+        },
       },
 
       /**
@@ -26,7 +33,7 @@
        *
        * @return {undefined}
        */
-      handlerResponse: function(event) {
+      _handlerResponse: function(event) {
          this.ret = JSON.stringify(event.detail.detail.response);
       },
     });
