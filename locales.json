@@ -5,7 +5,8 @@
     "required_field": "Field required!",
     "invalid_mail": "Invalid mail!",
     "btn_text": "Send",
-    "success_message": "Sent with successs!"
+    "success_message": "Sent with successs!",
+    "forbidden": "User or password is not valid!"
   },
   "br": {
       "label_mail": "E-mail",
@@ -13,7 +14,8 @@
       "required_field": "Campo obrigatório!",
       "invalid_mail": "E-mail inválido!",
       "btn_text": "Enviar",
-      "success_message": "Enviado com sucesso!"
+      "success_message": "Enviado com sucesso!",
+      "forbidden": "Usuário ou senha inválidos!"
   },
   "es": {
       "label_mail": "Correo electrónico",
@@ -21,6 +23,7 @@
       "required_field": "Campo obligatorio!",
       "invalid_mail": "Correo electrónico no válido!",
       "btn_text": "Enviar",
-      "success_message": "Enviado correctamente!"
+      "success_message": "Enviado correctamente!",
+      "forbidden": "De usuario o contraseña no válido!"
   }
 }
