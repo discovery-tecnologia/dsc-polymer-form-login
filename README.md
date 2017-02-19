@@ -31,7 +31,9 @@ Example usage:
 
 ```html
 <dsc-polymer-form-login language="br" 
+                        method="POST"
                         endpoint="http://my-site/my-api" 
+                        headers='{"X-foo": "X-bar"}'
                         on-response-success="myHandlerFunction"></dsc-polymer-form-login>
 ```
 
@@ -42,6 +44,7 @@ Example usage:
 |:---------|---------|---------------------------------------|-----------------------------------|
 | language | String  |Translate the form messages and labels | en                                |
 | endpoint | String  |Endpoint API                           | http://localhost:3000/api/login   |
+| method   | String  |String method used                     | POST                              |
 | headers  | Object  |Headers options for requisition        | null                              |
 
 ### Events

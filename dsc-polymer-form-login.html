@@ -71,9 +71,7 @@
       <iron-ajax id="ajax" 
                  url="{{endpoint}}" 
                  headers="{{headers}}"
-                 content-type="application/json"
-                 handle-as="json"
-                 method="POST" 
+                 method="{{method}}" 
                  on-error="_handleError"
                  on-request="_handleRequestSent"
                  on-response="_handleResponseReceived"></iron-ajax>
@@ -126,6 +124,15 @@
          */
         headers: {
           type: Object,
+        },
+
+        /**
+         * Define the method used
+         * @type String
+         */
+        method: {
+          type: String,
+          value: 'POST',
         },
 
       },
