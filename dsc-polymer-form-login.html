@@ -164,13 +164,18 @@
           this.$.button.disabled = false;
           var req = event.detail.request;
           var statusCode = req.status;
-          var message = 'HTTP status: ' + statusCode + ' - ' + req.statusText;
+          var message = '';
+          if(statusCode == 0) {
+            message = this.localize('server_offline');
+          } else {
+            message = 'HTTP status: ' + statusCode + ' - ' + req.statusText;
+          }
+          var color = 'red';
           if(statusCode == 403) {
             message = this.localize('forbidden');
-            this._showToast(message, '#323232');
-          } else {
-            this._showToast(message, 'red');
+            color = '#323232';
           }
+          this._showToast(message, color);
       },
 
       /**
