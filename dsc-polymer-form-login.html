@@ -55,7 +55,7 @@
 
     <div id="dsc-container-form-login">
       <form is="iron-form">
-        <paper-input name="mail" value="{{login.mail}}" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
+        <paper-input name="email" value="{{login.email}}" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
           <iron-icon icon="mail" prefix></iron-icon>
           <div class="suffix-info" suffix>@email.com</div>
         </paper-input>
@@ -93,7 +93,7 @@
         login: {
             type: Object,
             value: {
-              'mail': '',
+              'email': '',
               'password': '',
             },
             notify: true,
