@@ -6,7 +6,8 @@
     "invalid_mail": "Invalid mail!",
     "btn_text": "Send",
     "success_message": "Sent with successs!",
-    "forbidden": "User or password is not valid!",
+    "unauthorized": "User or password is not valid!",
+    "forbidden": "Permission denied!",
     "server_offline": "Offline server"
   },
   "br": {
@@ -16,7 +17,8 @@
       "invalid_mail": "E-mail inválido!",
       "btn_text": "Enviar",
       "success_message": "Enviado com sucesso!",
-      "forbidden": "Usuário ou senha inválidos!",
+      "unauthorized": "Usuário ou senha inválidos!",
+      "forbidden": "Permissão negada!",
       "server_offline": "Servidor offline"
   },
   "es": {
@@ -26,7 +28,8 @@
       "invalid_mail": "Correo electrónico no válido!",
       "btn_text": "Enviar",
       "success_message": "Enviado correctamente!",
-      "forbidden": "De usuario o contraseña no válido!",
+      "unauthorized": "De usuario o contraseña no válido!",
+      "forbidden": "Permiso denegado!",
       "server_offline": "Servidor sin conexión"
   }
 }
