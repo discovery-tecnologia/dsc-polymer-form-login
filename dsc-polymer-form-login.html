@@ -55,10 +55,10 @@
 
     <div id="dsc-container-form-login">
       <form is="iron-form">
-        <paper-input name="email" value="{{login.email}}" label$="[[localize('label_mail')]]" required auto-validate pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
+        <paper-input name="email" value="{{login.email}}" label$="[[localize('label_mail')]]" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
           <iron-icon icon="mail" prefix></iron-icon>
         </paper-input>
-        <paper-input name="password" type="password" value="{{login.password}}" label$="[[localize('label_password')]]" required auto-validate error-message="[[localize('required_field')]]">
+        <paper-input name="password" type="password" value="{{login.password}}" label$="[[localize('label_password')]]" required error-message="[[localize('required_field')]]">
           <iron-icon icon="perm-identity" prefix></iron-icon>
         </paper-input>
         <paper-button id="button" class="dsc-button-submit" raised on-tap="handleSubmit">[[localize('btn_text')]]</paper-button>
@@ -204,6 +204,7 @@
        */
       _handleResponseReceived: function(response) {
           this.$.button.disabled = false;
+          this.login = {email: null, password: null};
           this.fire('response-success', response);
       },
 
