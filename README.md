@@ -34,7 +34,8 @@ Example usage:
                         method="POST"
                         endpoint="http://my-site/my-api" 
                         headers='{"X-foo": "X-bar"}'
-                        on-response-success="myHandlerFunction"></dsc-polymer-form-login>
+                        on-request-sending="myHandlerRequestFunction"
+                        on-response-success="myHandlerReponseFunction"></dsc-polymer-form-login>
 ```
 
 ## API
@@ -50,6 +51,7 @@ Example usage:
 ### Events
 | Name             | Description                                                                      |
 |:-----------------|----------------------------------------------------------------------------------|
+| request-sending  | Listen to the request event. Provides the request object to another element.     |
 | response-success | Listen to the response event ok. Provides the response object to another element.|
 
 The file [locales.json](https://github.com/discovery-tecnologia/dsc-polymer-form-login/blob/master/locales.json) contains the map of languages translated (EN,BR,ES).

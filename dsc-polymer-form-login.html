@@ -193,6 +193,7 @@
        */
       _handleRequestSent: function(request) {
           this.$.button.disabled = true;
+          this.fire('request-sending', request);
       },
 
       /**
