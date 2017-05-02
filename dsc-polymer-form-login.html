@@ -6,11 +6,11 @@
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-input/paper-textarea.html">
-<link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../iron-icons/notification-icons.html">
 <link rel="import" href="../paper-toast/paper-toast.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../iron-form/iron-form.html">
+<link rel="import" href="dsc-form-login-icons.html">
 
 <dom-module id="dsc-polymer-form-login">
 
@@ -23,11 +23,11 @@
 
       #dsc-container-form-login form paper-input iron-icon {
           color: #666666;
-          margin: 0 5px 5px 0; 
+          margin: 0 5px 5px 0;
       }
 
       .suffix-info {
-          color: #999999; 
+          color: #999999;
       }
 
       .dsc-button-submit {
@@ -57,10 +57,10 @@
     <div id="dsc-container-form-login">
       <form is="iron-form" id="form">
         <paper-input name="email" value="{{login.email}}" label$="[[localize('label_mail')]]" required pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" error-message="[[localize('invalid_mail')]]">
-          <iron-icon icon="mail" prefix></iron-icon>
+          <iron-icon icon="form-login-icons:mail-outline" prefix></iron-icon>
         </paper-input>
         <paper-input name="password" type="password" value="{{login.password}}" label$="[[localize('label_password')]]" required error-message="[[localize('required_field')]]">
-          <iron-icon icon="perm-identity" prefix></iron-icon>
+          <iron-icon icon="form-login-icons:perm-identity" prefix></iron-icon>
         </paper-input>
         <paper-button id="button" class="dsc-button-submit" raised on-tap="_onSubmit">[[localize('btn_text')]]</paper-button>
 
@@ -68,10 +68,10 @@
 
       </form>
 
-      <iron-ajax id="ajax" 
-                 url="{{endpoint}}" 
+      <iron-ajax id="ajax"
+                 url="{{endpoint}}"
                  headers="{{headers}}"
-                 method="{{method}}" 
+                 method="{{method}}"
                  on-error="_handleError"
                  on-request="_handleRequestSent"
                  on-response="_handleResponseReceived"></iron-ajax>
